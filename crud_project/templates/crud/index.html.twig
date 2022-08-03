@@ -14,6 +14,7 @@
                 <th>Description</th>
                 <th>Picture</th>
                 <th>Type</th>
+                <th>Status</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{ crud.description }}</td>
                 <td>{{ crud.picture }}</td>
                 <td>{{ crud.type }}</td>
+                <td>{{ crud.fkStatus.name }}</td>
                 <td>
                     <a href="{{ path('app_crud_show', {'id': crud.id}) }}">show</a>
                     <a href="{{ path('app_crud_edit', {'id': crud.id}) }}">edit</a>

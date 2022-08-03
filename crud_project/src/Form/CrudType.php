@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Crud;
+use App\Entity\Status;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +20,11 @@ class CrudType extends AbstractType
             ->add('name')
             ->add('date')
             ->add('description')
-
+            ->add('fk_status', EntityType::class, [
+                'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px'],
+                'class' =>Status::class,
+                'choice_label' => 'name',
+            ])
             ->add('type')
             ->add('picture', FileType::class, [
                     'label' => 'Upload Picture',

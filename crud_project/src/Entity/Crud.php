@@ -29,6 +29,9 @@ class Crud
     #[ORM\Column(length: 15)]
     private ?string $type = null;
 
+    #[ORM\ManyToOne]
+    private ?status $fk_status = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Crud
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getFkStatus(): ?Status
+    {
+        return $this->fk_status;
+    }
+
+    public function setFkStatus(?Status $fk_status): self
+    {
+        $this->fk_status = $fk_status;
 
         return $this;
     }

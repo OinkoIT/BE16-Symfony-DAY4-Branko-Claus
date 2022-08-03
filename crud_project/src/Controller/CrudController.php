@@ -30,6 +30,7 @@ class CrudController extends AbstractController
         $form = $this->createForm(CrudType::class, $crud);
         $form->handleRequest($request);
         $crud = $form->getData();
+        // $crud->setFkStatus();
         // dd($crud);
         if ($form->isSubmitted() && $form->isValid()) {
             // dd($crud);

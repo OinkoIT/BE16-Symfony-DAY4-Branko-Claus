@@ -7,8 +7,16 @@
 
     Claus$ symfony server:start
 
+    > Open new Terminal
+    
+    > .env: DATABASE_URL="mysql://root:@127.0.0.1:3306/test_project"
+
     Claus$ php bin/console doctrine:database:create
 
     Claus$ php bin/console make:entity
+
+    Claus$ php bin/console make:migration
+
+    Claus$ php bin/console doctrine:migrations:migrate
 
     Claus$ php bin/console make:crud

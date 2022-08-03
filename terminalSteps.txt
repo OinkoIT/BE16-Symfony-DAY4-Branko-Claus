@@ -1,0 +1,14 @@
+
+> Steps to use "make:crud"
+
+    Claus$ symfony new --webapp crud_project
+
+    Claus$ cd crud_project
+
+    Claus$ symfony server:start
+
+    Claus$ php bin/console doctrine:database:create
+
+    Claus$ php bin/console make:entity
+
+    Claus$ php bin/console make:crud
